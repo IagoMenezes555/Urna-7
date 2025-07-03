@@ -1,0 +1,10 @@
+<div class="pad">
+            <div class="buttons">
+                <button class="number" *ngFor="let numero of numeros" (click)="digitarNumero(numero)">{{ numero }}</button>
+            </div>
+            <div class="othersButtons">
+                <button class="branco" (click)="branco()">BRANCO</button>
+                <button class="corrige" (click)="corrige()">CORRIGE</button>
+                <button class="confirma" (click)="confirma()">CONFIRMA</button>
+            </div>
+        </div>

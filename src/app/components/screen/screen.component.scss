@@ -1,0 +1,59 @@
+.screen {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 700px;
+    height: 500px;
+    border: black 5px solid;
+}
+
+.image {
+    border: 5px solid black;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.a {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+}
+
+.retang {
+    width: 300px;
+    border: 5px solid black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+
+    span{
+        font-size: 30px;
+        margin-left: 10px;
+    }
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+
+    span{
+        font-size: 25px;
+    }
+}
+
+.separator {
+    display: flex;
+    justify-content: space-between;
+}
