@@ -1,44 +1,50 @@
 .page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 600px;
+  border: 5px rgb(0, 0, 0) solid;
+  background-color: rgb(78, 78, 78);
+
+  .voltar {
+    display: flex;
+
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+
+      img {
+        width: 50px;
+        transition: 100ms;
+      }
+
+      img:hover {
+        width: 53px;
+      }
+    }
+
+    button:hover {
+      padding: 0;
+    }
+  }
+
+  .cadastro {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
-    width: 600px;
-    border: 5px rgb(0, 0, 0) solid;
-    background-color: rgb(78, 78, 78);
+    margin: 20px;
 
-    .voltar {
-        display: flex;
-
-        button {
-            background-color: transparent;
-            border: none;
-            padding: 0;
-
-            img {
-                width: 50px;
-                transition: 100ms;
-            }
-
-            img:hover {
-                width: 53px;
-            }
-        }
-
-        button:hover {
-            padding: 0;
-        }
+    span {
+      color: white;
+      font-size: 30px;
     }
 
-    .cadastro {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        margin: 20px;
-
-        span {
-            color: white;
-        }
+    .input{
+        border-color: black;
+        width: 300px;
+        height: 30px;
     }
-
+  }
 }
