@@ -4,9 +4,9 @@
     </div>
     <div class="cadastro">
         <span>CADASTRO</span>
-        <input class="input" type="text" placeholder="NOME">
-        <input class="input" type="text" placeholder="PARTIDO">
-        <input class="input" type="text" placeholder="NÚMERO">
+        <input class="input" type="text" [(ngModel)]="novoCandidato.nome" placeholder="NOME">
+        <input class="input" type="text" [(ngModel)]="novoCandidato.partido" placeholder="PARTIDO">
+        <input class="input" type="text" [(ngModel)]="novoCandidato.numero" placeholder="NÚMERO">
         <select class="select" name="TIPO DE CANDIDATO" id="">
             <option value="">PREFEITO</option>
             <option value="">VEREADOR</option>
