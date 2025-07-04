@@ -33,7 +33,7 @@ export class PadComponent {
       alert("Você votou em " + this.urnaService.oNome + " pra vereador");
     } else if (this.urnaService.oNome == "BRANCO" && this.votouPraPrefeito == false) {
       this.votouPraPrefeito = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra vereador");
+      alert("Você votou em " + this.urnaService.oNome + " pra prefeito");
     } else if(this.urnaService.oNome == "BRANCO" && this.votouPraPrefeito == true && this.votouPraVereador == false){
       this.votouPraVereador = true;
       alert("Você votou em " + this.urnaService.oNome + " pra vereador");

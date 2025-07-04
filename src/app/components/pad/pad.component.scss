@@ -36,7 +36,7 @@
 
 .othersButtons{
     background-color: rgb(26, 26, 26);
-    padding: 20px;
+    height: 70px;
     gap: 10px;
     border-width: 2px 0px 0px;
     border-style: solid;
@@ -52,6 +52,7 @@
     border: 2px black solid;
     border-radius: 20px;
     transition: 100ms;
+    margin-bottom: 10px;
 }
 
 .branco:hover{
@@ -66,6 +67,7 @@
     border: 2px black solid;
     border-radius: 20px;
     transition: 100ms;
+    margin-bottom: 10px;
 }
 
 .corrige:hover{
@@ -79,6 +81,7 @@
     color: black;
     border: 2px black solid;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .confirma:hover{
