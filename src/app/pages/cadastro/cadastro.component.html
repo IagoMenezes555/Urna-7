@@ -6,11 +6,7 @@
         <span>CADASTRO</span>
         <input class="input" type="text" [(ngModel)]="novoCandidato.nome" placeholder="NOME">
         <input class="input" type="text" [(ngModel)]="novoCandidato.partido" placeholder="PARTIDO">
-        <input class="input" type="text" [(ngModel)]="novoCandidato.numero" placeholder="NÚMERO">
-        <select class="select" name="TIPO DE CANDIDATO" id="">
-            <option value="">PREFEITO</option>
-            <option value="">VEREADOR</option>
-        </select>
-        <button>CONFIRMAR</button>
+        <input class="input" type="text" maxlength="4" [(ngModel)]="novoCandidato.numero" placeholder="NÚMERO">
+        <button (click)="adicionar()">CONFIRMAR</button>
     </div>
 </div>
