@@ -1,0 +1,1 @@
+body{height:100dvh;margin:0;display:flex;justify-content:center;align-items:center;font-family:Poppins,sans-serif;font-weight:600;font-style:normal}button{font-family:Poppins,sans-serif;font-weight:600;font-style:normal;width:100px;background-color:#0ff;border:black solid 2px;border-radius:20px;padding:10px;transition:.1s}button:hover{background-color:#abffff;padding:11px}
