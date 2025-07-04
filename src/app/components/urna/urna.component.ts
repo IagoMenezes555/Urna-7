@@ -105,6 +105,20 @@ export class Prefeito extends Candidato {
       this.imagem = './not-found.png';
       this.urnaService.aImagem = this.imagem;
       this.urnaService.oPartido = '';
+      this.urnaService.oNome = '';
+    }
+
+    if(encontrou == false && this.numero.length == 2 && this.urnaService.votouPraPrefeito == false){
+      this.imagem = './not-found.png';
+      this.urnaService.aImagem = this.imagem;
+      this.urnaService.oPartido = '';
+      this.urnaService.oNome = 'NULO';
+    }
+
+    if(encontrou == false && this.numero.length == 4 && this.urnaService.votouPraVereador == false){
+      this.imagem = './not-found.png';
+      this.urnaService.aImagem = this.imagem;
+      this.urnaService.oPartido = '';
       this.urnaService.oNome = 'NULO';
     }
 

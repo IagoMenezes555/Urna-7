@@ -16,9 +16,15 @@ export class PadComponent {
     9, 8, 7, 6, 5, 4, 3, 2, 1, 0
   ]
 
+  votouBranco: boolean = false;
+
   branco() {
-    this.urnaService.oNome = "BRANCO";
-    this.urnaService.oPartido = "BRANCO";
+
+    if(this.votouPraPrefeito == false || this.votouPraVereador == false){
+      this.urnaService.oNome = "BRANCO";
+      this.urnaService.oPartido = "BRANCO";
+      this.urnaService.aImagem = './not-found.png';
+    }
   }
 
   votouPraPrefeito: boolean = false;
