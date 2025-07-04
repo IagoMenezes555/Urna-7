@@ -1,7 +1,7 @@
 # 🗳️ Urna Eletrônica - Angular
 
-Uma aplicação de urna eletrônica desenvolvida com Angular.  
-Permite digitar o número de um candidato, visualizar suas informações e registrar o voto.
+Aplicação feita em Angular que simula uma urna eletrônica.
+O usuário digita o número do candidato e visualiza suas informações detalhadas em tempo real.
 
 ## ✨ Funcionalidades
 
@@ -10,7 +10,6 @@ Permite digitar o número de um candidato, visualizar suas informações e regis
 - Exibição de nome, número, partido e imagem
 - Confirmação de voto
 - Voto nulo caso o número seja inválido
-- Armazenamento dos votos com `localStorage`
 - Layout flexível com Flexbox
 
 ## 🛠️ Tecnologias Utilizadas
