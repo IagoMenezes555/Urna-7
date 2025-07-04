@@ -1,48 +1,54 @@
 import { Component } from '@angular/core';
 import { UrnaService } from '../../services/urna.service';
 import { DoCheck } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-screen',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './screen.component.html',
   styleUrl: './screen.component.scss'
 })
-export class ScreenComponent implements DoCheck{
-  constructor(private urnaService: UrnaService){}
+export class ScreenComponent implements DoCheck {
+  constructor(private urnaService: UrnaService) { }
   numeroAntigo = "";
+  votouPraPrefeito = false;
+  votouPraVereador = false;
 
-  get numero(){
+  get numero() {
     return this.urnaService.oNumero;
   }
 
-  get partido(){
+  get partido() {
     return this.urnaService.oPartido;
   }
-  
-  get imagem(){
+
+  get imagem() {
     return this.urnaService.aImagem;
   }
 
-  get nome(){
+  get nome() {
     return this.urnaService.oNome;
   }
 
   tipoDeCandidato: string = "";
 
-  checarCandidato(){
-    if(this.urnaService.oNumero.length == 2 && this.urnaService.votouPraPrefeito == false){
+  checarCandidato() {
+    if (this.urnaService.oNumero.length == 2 && this.urnaService.votouPraPrefeito == false) {
       this.tipoDeCandidato = "PREFEITO";
-    }else if(this.urnaService.oNumero.length == 4 && this.urnaService.votouPraVereador == false){
+    } else if (this.urnaService.oNumero.length == 4 && this.urnaService.votouPraVereador == false) {
       this.tipoDeCandidato = "VEREADOR";
-    }else{
+    } else {
       this.tipoDeCandidato = "";
     }
   }
 
   ngDoCheck() {
+    this.votouPraPrefeito = this.urnaService.votouPraPrefeito;
+    this.votouPraVereador = this.urnaService.votouPraVereador;
+    
     let numeroAtual = this.urnaService.oNumero
-    if(numeroAtual != this.numeroAntigo){
+    if (numeroAtual != this.numeroAntigo) {
       this.numeroAntigo = numeroAtual;
       this.checarCandidato();
     }
