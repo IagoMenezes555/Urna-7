@@ -11,8 +11,19 @@ import { UrnaService } from '../../services/urna.service';
 })
 export class CadastroComponent {
   constructor(private urnaService: UrnaService) {}
-  novoCandidato = { nome: '', partido: '', numero: '' };
+  novoCandidato = { nome: '', partido: '', numero: '', imagem: '' };
   tudoCerto: boolean = false;
+
+  onFileSelected(event:any){
+    const file: File = event.target.files[0];
+    if (file) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.novoCandidato.imagem = reader.result as string;
+    };
+    reader.readAsDataURL(file);
+  }
+  }
 
   adicionar() {
     if (
@@ -37,13 +48,13 @@ export class CadastroComponent {
         nome: this.novoCandidato.nome,
         partido: this.novoCandidato.partido,
         numero: this.novoCandidato.numero,
-        imagem: './not-found.png',
+        imagem: this.novoCandidato.imagem || './not-found.png',
       });
 
       localStorage.setItem('prefeitos', JSON.stringify(candidatos));
 
       alert('Prefeito cadastrado!');
-      this.novoCandidato = { nome: '', partido: '', numero: '' };
+      this.novoCandidato = { nome: '', partido: '', numero: '', imagem: ''};
     }
 
     if (
@@ -58,13 +69,14 @@ export class CadastroComponent {
         nome: this.novoCandidato.nome,
         partido: this.novoCandidato.partido,
         numero: this.novoCandidato.numero,
-        imagem: './not-found.png',
+        imagem: this.novoCandidato.imagem || './not-found.png',
       });
 
       localStorage.setItem('vereadores', JSON.stringify(candidatos));
 
       alert('Vereador cadastrado!');
-      this.novoCandidato = { nome: '', partido: '', numero: '' };
+      this.novoCandidato = { nome: '', partido: '', numero: '' , imagem: ''};
     }
   }
+  
 }

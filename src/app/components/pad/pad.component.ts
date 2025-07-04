@@ -27,33 +27,75 @@ export class PadComponent {
   confirma() {
     if (this.urnaService.oNumero.length == 2 && this.urnaService.oNome != "BRANCO" && this.votouPraPrefeito == false) {
       this.votouPraPrefeito = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra prefeito");
+      this.urnaService.votouPraPrefeito = this.votouPraPrefeito;
+      this.urnaService.aImagem = './not-found.png';
+      this.urnaService.oNome = '';
+      this.urnaService.oPartido = '';
+      this.numeroAtual = '';
+      alert("Você votou pra prefeito");
+      this.urnaService.oNumero = this.numeroAtual;
     } else if (this.urnaService.oNumero.length == 4 && this.urnaService.oNome != "BRANCO" && this.votouPraVereador == false) {
       this.votouPraVereador = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra vereador");
+      this.urnaService.votouPraVereador = this.votouPraVereador;
+      this.urnaService.aImagem = './not-found.png';
+      this.urnaService.oNome = '';
+      this.urnaService.oPartido = '';
+      this.numeroAtual = '';
+      this.urnaService.oNumero = this.numeroAtual;
+      alert("Você votou pra vereador");
     } else if (this.urnaService.oNome == "BRANCO" && this.votouPraPrefeito == false) {
       this.votouPraPrefeito = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra prefeito");
+      this.urnaService.votouPraPrefeito = this.votouPraPrefeito;
+      this.urnaService.aImagem = './not-found.png';
+      this.urnaService.oNome = '';
+      this.urnaService.oPartido = '';
+      this.numeroAtual = '';
+      this.urnaService.oNumero = this.numeroAtual;
+      alert("Você votou pra prefeito");
     } else if(this.urnaService.oNome == "BRANCO" && this.votouPraPrefeito == true && this.votouPraVereador == false){
       this.votouPraVereador = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra vereador");
-    } else if(this.urnaService.oNumero.length == 2 && this.urnaService.oNome == "NULO" && this.votouPraPrefeito == false){
+      this.urnaService.votouPraVereador = this.votouPraVereador;
+      this.urnaService.aImagem = './not-found.png';
+      this.urnaService.oNome = '';
+      this.urnaService.oPartido = '';
+      this.numeroAtual = '';
+      this.urnaService.oNumero = this.numeroAtual;
+      alert("Você votou pra vereador");
+    } else if(this.urnaService.oNumero.length == 2 && this.urnaService.oNome == 'NULO' && this.votouPraPrefeito == false){
       this.votouPraPrefeito = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra prefeito");
-    }else if(this.urnaService.oNumero.length == 4 && this.urnaService.oNome == "NULO" && this.votouPraPrefeito == true && this.votouPraVereador == false){
+      this.urnaService.votouPraPrefeito = this.votouPraPrefeito;
+      this.urnaService.aImagem = './not-found.png';
+      this.urnaService.oNome = '';
+      this.urnaService.oPartido = '';
+      this.numeroAtual = '';
+      this.urnaService.oNumero = this.numeroAtual;
+      alert("Você votou pra prefeito");
+    }else if(this.urnaService.oNumero.length == 4 && this.urnaService.oNome == "" && this.votouPraPrefeito == true && this.votouPraVereador == false){
       this.votouPraVereador = true;
-      alert("Você votou em " + this.urnaService.oNome + " pra vereador");
+      this.urnaService.votouPraVereador = this.votouPraVereador;
+      this.urnaService.aImagem = './not-found.png';
+      this.urnaService.oNome = '';
+      this.urnaService.oPartido = '';
+      this.numeroAtual = '';
+      this.urnaService.oNumero = this.numeroAtual;
+      alert("Você votou pra vereador");
     }
   }
 
   corrige() {
-    this.numeroAtual = this.numeroAtual.slice(0, -1);
+    this.numeroAtual = '';
     this.urnaService.oNumero = this.numeroAtual;
   }
 
   digitarNumero(numero: number) {
-    this.numeroAtual += numero;
-    this.urnaService.oNumero = this.numeroAtual;
+
+    if(this.votouPraPrefeito == false && this.numeroAtual.length < 2){
+      this.numeroAtual += numero;
+      this.urnaService.oNumero = this.numeroAtual;
+    }if(this.votouPraPrefeito == true && this.votouPraVereador == false && this.numeroAtual.length < 4){
+      this.numeroAtual += numero;
+      this.urnaService.oNumero = this.numeroAtual;
+    }
   }
 
 }

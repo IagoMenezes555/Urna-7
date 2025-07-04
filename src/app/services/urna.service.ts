@@ -8,6 +8,8 @@ export class UrnaService {
   oPartido: string = "";
   aImagem: string = "./not-found.png";
   oNome: string = "";
+  votouPraPrefeito: boolean = false;
+  votouPraVereador: boolean = false;
   
   constructor() { }
 }

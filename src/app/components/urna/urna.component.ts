@@ -90,7 +90,7 @@ export class Prefeito extends Candidato {
     let encontrou = false;
 
     for (let i = 0; i < todos.length; i++) {
-      if (this.numero == todos[i].numero) {
+      if (this.numero == todos[i].numero && this.urnaService.votouPraPrefeito == false) {
         this.partido = todos[i].partido;
         this.imagem = todos[i].imagem;
         this.nome = todos[i].nome;
@@ -106,6 +106,13 @@ export class Prefeito extends Candidato {
       this.urnaService.aImagem = this.imagem;
       this.urnaService.oPartido = '';
       this.urnaService.oNome = 'NULO';
+    }
+
+    if(encontrou == false && this.urnaService.oNumero == ''){
+      this.imagem = './not-found.png';
+      this.urnaService.aImagem = this.imagem;
+      this.urnaService.oPartido = '';
+      this.urnaService.oNome = '';
     }
   }
 }

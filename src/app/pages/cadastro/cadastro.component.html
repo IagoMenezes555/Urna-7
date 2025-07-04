@@ -7,6 +7,7 @@
         <input class="input" type="text" [(ngModel)]="novoCandidato.nome" placeholder="NOME">
         <input class="input" type="text" [(ngModel)]="novoCandidato.partido" placeholder="PARTIDO">
         <input class="input" type="text" maxlength="4" [(ngModel)]="novoCandidato.numero" placeholder="NÚMERO">
+        <input class="file" type="file" (change)="onFileSelected($event)">
         <button (click)="adicionar()">CONFIRMAR</button>
     </div>
 </div>

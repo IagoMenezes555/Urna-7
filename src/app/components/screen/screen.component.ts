@@ -31,9 +31,9 @@ export class ScreenComponent implements DoCheck{
   tipoDeCandidato: string = "";
 
   checarCandidato(){
-    if(this.urnaService.oNumero.length == 2){
+    if(this.urnaService.oNumero.length == 2 && this.urnaService.votouPraPrefeito == false){
       this.tipoDeCandidato = "PREFEITO";
-    }else if(this.urnaService.oNumero.length == 4){
+    }else if(this.urnaService.oNumero.length == 4 && this.urnaService.votouPraVereador == false){
       this.tipoDeCandidato = "VEREADOR";
     }else{
       this.tipoDeCandidato = "";
