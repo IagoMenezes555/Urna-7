@@ -48,7 +48,6 @@ export class PadComponent {
       this.votouPraPrefeito = true;
       this.urnaService.votouPraPrefeito = this.votouPraPrefeito;
       this.resetarCampos();
-      alert("Você votou em BRANCO para prefeito");
       return;
     }
 
@@ -56,7 +55,6 @@ export class PadComponent {
       this.votouPraVereador = true;
       this.urnaService.votouPraVereador = this.votouPraVereador;
       this.resetarCampos();
-      alert("Você votou em BRANCO para prefeito");
       return;
     }
 
@@ -64,7 +62,6 @@ export class PadComponent {
       this.votouPraPrefeito = true;
       this.urnaService.votouPraPrefeito = true;
       this.resetarCampos();
-      alert("Você votou pra prefeito");
       return;
     }
 
@@ -72,7 +69,6 @@ export class PadComponent {
       this.votouPraPrefeito = true;
       this.urnaService.votouPraPrefeito = true;
       this.resetarCampos();
-      alert("Você votou NULO para prefeito");
       return;
     }
 
@@ -80,7 +76,6 @@ export class PadComponent {
       this.votouPraVereador = true;
       this.urnaService.votouPraVereador = true;
       this.resetarCampos();
-      alert("Você votou pra vereador");
       return;
     }
 
@@ -88,7 +83,6 @@ export class PadComponent {
       this.votouPraVereador = true;
       this.urnaService.votouPraVereador = true;
       this.resetarCampos();
-      alert("Você votou NULO para vereador");
       return;
     }
 
