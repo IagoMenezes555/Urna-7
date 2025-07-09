@@ -1,5 +1,6 @@
 <div class="screen">
-    <div *ngIf="votouPraVereador == false">
+    @if(votouPraVereador == false){
+    <div>
         <div class="separator">
             <div class="a">
                 <div class="retang">
@@ -17,8 +18,9 @@
             <span>NUMERO: {{ numero }}</span>
             <span>PARTIDO: {{ partido }}</span>
         </div>
-    </div>
-    <div class="fim" *ngIf="votouPraVereador == true">
+    </div>}
+    @if(votouPraVereador == true){
+    <div class="fim">
         <span>FIM</span>
-    </div>
+    </div>}
 </div>
