@@ -1,6 +1,8 @@
 <div class="pad">
             <div class="buttons">
-                <button class="number" *ngFor="let numero of numeros" (click)="digitarNumero(numero)">{{ numero }}</button>
+                @for(numero of numeros; track numero){
+                <button class="number" (click)="digitarNumero(numero)">{{ numero }}</button>
+                }
             </div>
             <div class="othersButtons">
                 <button class="branco" (click)="branco()">BRANCO</button>
